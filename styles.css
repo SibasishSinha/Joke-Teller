@@ -1,0 +1,70 @@
+html
+{
+    box-sizing: border-box;    /* prevents padding from adding extra height and width to the page. */
+}
+
+body
+{
+    margin: 0;
+    background-color: #ffffff;
+}
+
+.container
+{
+    height: 100vh;
+    /* 100 view port height. Allows backgound to strech full height of the screen even though the content is not. */
+    width: 100vw;
+    display: flex;
+    flex-direction: column; /* when we have two elements in the container, we want them top-bottom and not left-right */
+    justify-content: center;
+    align-items: center;
+    background: url('./robot.gif');
+    background-size: contain; /* image will be fully visible on the screen */
+    background-position: left center; /* left is the horizontal property and center is the vertical property. */
+    background-repeat: no-repeat; /* only one single gif */
+}
+
+button
+{
+    cursor: pointer;
+    outline: none;
+    width: 200px;
+    height: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: whitesmoke;
+    background: #0278ae;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover
+{
+    filter: brightness(110%);
+}
+button:active
+{
+    transform: scale(0.95);
+}
+button:disabled
+{
+    cursor: default;
+    filter: brightness(40%);
+}
+
+/* https://gph.is/g/4oMXqYL  - giphy link */
+
+/* Media query for mobile devices */
+@media screen and (max-width: 900px)
+{
+    .container
+    {
+        background-size: cover;
+        background-position: center center;
+    }
+
+    button {
+        box-shadow: 5px 5px 30px 20px rgba(0, 0, 0, 0.5);
+    }
+}
